@@ -2,10 +2,10 @@
 
 def magic_calculation(a, b, c):
     d = a + b
-    e = d - c
+    e = a * b
     if a < b:
         return c
-    elif c > b:
+    elif b < c:
         return d
     else:
-        return e
+        return e - c
