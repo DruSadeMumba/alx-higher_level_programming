@@ -2,4 +2,4 @@
 import string
 
 for alphabets in range(97, 123):
-    print(f'{chr(alphabets)}', end="")
+    print('{}'.format(chr(alphabets)), end="")
