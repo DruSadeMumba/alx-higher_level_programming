@@ -26,7 +26,7 @@ void print_python_bytes(PyObject *p)
 		max = 10;
 	else
 		max = n + 1;
-	printf("  first %ld bytes:\n", max);
+	printf("  first %ld bytes:", max);
 
 	for (i = 0; i < max; i++)
 	{
