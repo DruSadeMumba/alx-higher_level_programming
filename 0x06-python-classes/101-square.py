@@ -51,6 +51,4 @@ class Square:
         output.extend(["" for _ in range(self.__position[1])])
         for i in range(self.__size):
             output.append(" " * self.__position[0] + "#" * self.__size)
-            if i != self.__size - 1:
-                print("")
         return "\n".join(output)
