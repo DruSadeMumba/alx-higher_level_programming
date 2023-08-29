@@ -47,8 +47,8 @@ class Square:
                                  "#" * self.__size]))
 
     def __str__(self):
-        if self.__size == 0:
-            return ''
-        i = [" " * self.__position[0] + "#" * self.__size
-             for _ in range(self.__size)]
-        return "\n".join(["" * self.__position[1]] + i)
+        output = []
+        output.extend(["" for _ in range(self.__position[1])])
+        for _ in range(self.__size):
+            output.append(" " * self.__position[0] + "#" * self.__size)
+        return "\n".join(output)
