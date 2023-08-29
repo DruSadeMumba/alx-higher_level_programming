@@ -57,7 +57,7 @@ class SinglyLinkedList:
             self.__head = new
             return
 
-        while (h.next) and (new.data > h.next.data):
+        while (h.next) and (h.next.data < value):
             h = h.next
         new.next = h.next
         h.next = new
