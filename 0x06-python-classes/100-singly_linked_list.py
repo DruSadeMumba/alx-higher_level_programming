@@ -37,14 +37,12 @@ class SinglyLinkedList:
         self.__head = None
 
     def __str__(self):
-        char = ""
+        char = []
         h = self.__head
         while h:
-            char += str(h.data)
+            char.append(str(h.data))
             h = h.next
-            if h:
-                char += "\n"
-        return char
+        return "\n".join(char)
 
     def sorted_insert(self, value):
         new = Node(value)
