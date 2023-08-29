@@ -3,7 +3,9 @@
 
 
 class Square:
-    """square with private size attribute"""
+    """square with private size attribute
+    size is type int
+    """
     def __init__(self, size=0):
         self.__size = size
         if type(size) is not int:
