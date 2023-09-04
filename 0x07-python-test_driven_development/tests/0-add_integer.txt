@@ -1,0 +1,70 @@
+The ``add_integer`` module
+===========================
+
+Using ``add_integer``
+----------------------
+
+Import func from module
+        >>> add_integer = __import__("0-add_integer").add_integer
+
+Module docstring:
+        >>> m = __import__("0-add_integer").__doc__
+        >>> len(m) > 1
+        True
+
+Function docstring:
+        >>> f = __import__("0-add_integer").add_integer.__doc__
+        >>> len(f) > 1
+        True
+
+Add positive ints:
+        >>> add_integer(1, 7)
+        8
+
+Add negative ints:
+        >>> add_integer(-1, -7)
+        -8
+
+Add negative and positive ints:
+        >>> add_integer(-1, 7)
+        6
+
+Add positive floats:
+        >>> add_integer(1.2, 7.5)
+        8
+
+Add negative floats:
+        >>> add_integer(-1.2, -7.5)
+        -8
+
+Add negative and positive floats:
+        >>> add_integer(-1.2, 7.5)
+        6
+
+Add float and int:
+        >>> add_integer(1.2, 7)
+        8
+
+Add float and str:
+        >>> add_integer(1.2, "7")
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+Add str and str:
+        >>> add_integer("1.2", "7")
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+No value provided:
+        >>> add_integer()
+        Traceback (most recent call last):
+        ...
+        TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Add 3 values:
+        >>> add_integer(100.3, -2, 7)
+        Traceback (most recent call last):
+        ...
+        TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
