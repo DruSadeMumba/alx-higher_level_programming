@@ -10,23 +10,24 @@ class Rectangle:
 
     @property
     def width(self):
-        return self.width
+        return self.__width
 
     @property
     def height(self):
-        return self.height
-
-    def set_att(self, name, value):
-        if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
-        if value < 0:
-            raise ValueError(f"{name} must be >= 0")
-        setattr(self, f"__{name}", value)
+        return self.__height
 
     @width.setter
     def width(self, value):
-        self.set_att("width", value)
+        self.__width = value
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
 
     @height.setter
     def height(self, value):
-        self.set_att("height", value)
+        self.__height = value
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
