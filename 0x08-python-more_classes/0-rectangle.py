@@ -3,5 +3,5 @@
 
 
 class Rectangle:
-    """reping a square"""
+    """reping a rectangle"""
     pass
