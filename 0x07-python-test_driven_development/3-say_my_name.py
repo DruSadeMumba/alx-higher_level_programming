@@ -8,4 +8,4 @@ def say_my_name(first_name, last_name=""):
                       ("last_name", last_name)]:
         if not isinstance(val, str):
             raise TypeError("{} must be a string".format(name))
-    print('My name is {} {}'.format(first_name, last_name))
+    print(f"My name is {first_name} {last_name}")

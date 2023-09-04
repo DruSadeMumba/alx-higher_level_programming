@@ -6,5 +6,5 @@ def add_integer(a, b=98):
     """add 2 ints/ floats"""
     for value, val in [("a", a), ("b", b)]:
         if not isinstance(val, (int, float)):
-            raise TypeError("{} must be an integer".format(value))
+            raise TypeError(f"{value} must be an integer")
     return int(a) + int(b)

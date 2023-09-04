@@ -10,15 +10,15 @@ def matrix_mul(m_a, m_b):
 
     for pos, val in variables.items():
         if not isinstance(val, list):
-            raise TypeError("{} must be a list".format(pos))
+            raise TypeError(f"{pos} must be a list")
 
     for pos, val in variables.items():
         if not all(isinstance(row, list) for row in val):
-            raise TypeError("{} must be a list of lists".format(pos))
+            raise TypeError(f"{pos} must be a list of lists")
 
     for value, val in variables.items():
         if val == [] or val == [[]]:
-            raise TypeError("{} can't be empty".format(value))
+            raise TypeError(f"{value} can't be empty")
 
     for item, val in variables.items():
         if not all(isinstance(value, (int, float))
