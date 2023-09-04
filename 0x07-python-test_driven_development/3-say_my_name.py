@@ -7,5 +7,5 @@ def say_my_name(first_name, last_name=""):
     for name, val in [("first_name", first_name),
                       ("last_name", last_name)]:
         if not isinstance(val, str):
-            raise TypeError(f"{name} must be a string")
+            raise TypeError("{} must be a string".format(name))
     print('My name is {} {}'.format(first_name, last_name))
