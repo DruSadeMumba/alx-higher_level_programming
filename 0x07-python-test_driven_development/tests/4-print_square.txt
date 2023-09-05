@@ -1,0 +1,46 @@
+The ``print_square`` module
+===========================
+
+Using ``print_square``
+----------------------
+
+Import func from module
+        >>> print_square = __import__("4-print_square").print_square
+
+Module docstring:
+        >>> m = __import__("4-print_square").__doc__
+        >>> len(m) > 1
+        True
+
+Function docstring:
+        >>> f = __import__("4-print_square").print_square.__doc__
+        >>> len(f) > 1
+        True
+
+size is int:
+        >>> print_square(1)
+        #
+
+size is negative:
+        >>> print_square(-1)
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be >= 0
+
+size is float:
+        >>> print_square(1.2)
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+size is empy string:
+        >>> print_square("")
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+No args:
+        >>> print_square()
+        Traceback (most recent call last):
+        ...
+        TypeError: print_square() missing 1 required positional argument: 'size'

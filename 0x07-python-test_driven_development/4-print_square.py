@@ -4,7 +4,7 @@
 
 def print_square(size):
     """prints square with #"""
-    if not isinstance(size, (int, float)):
+    if not isinstance(size, int):
         raise TypeError("size must be an integer")
     elif size < 0:
         raise TypeError("size must be >= 0")
