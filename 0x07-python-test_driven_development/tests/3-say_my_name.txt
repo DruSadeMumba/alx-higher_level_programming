@@ -37,11 +37,11 @@ last_name is int:
 
 Empty strings:
         >>> say_my_name("", "")
-        My name is
+        My name is  
 
 Only one value:
         >>> say_my_name("Bob")
-        My name is Bob
+        My name is Bob 
 
 Two string values:
         >>> say_my_name("John", "Smith")
