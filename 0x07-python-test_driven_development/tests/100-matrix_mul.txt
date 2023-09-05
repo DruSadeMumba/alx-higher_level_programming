@@ -1,0 +1,18 @@
+The ``matrix_mul`` module
+===========================
+
+Using ``matrix_mul``
+----------------------
+
+Import func from module
+        >>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+
+Module docstring:
+        >>> m = __import__("100-matrix_mul").__doc__
+        >>> len(m) > 1
+        True
+
+Function docstring:
+        >>> f = __import__("100-matrix_mul").matrix_mul.__doc__
+        >>> len(f) > 1
+        True
