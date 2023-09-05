@@ -1,0 +1,40 @@
+The ``text_indentation`` module
+===========================
+
+Using ``text_indentation``
+----------------------
+
+Import func from module
+        >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Module docstring:
+        >>> m = __import__("5-text_indentation").__doc__
+        >>> len(m) > 1
+        True
+
+Function docstring:
+        >>> f = __import__("5-text_indentation").text_indentation.__doc__
+        >>> len(f) > 1
+        True
+
+text is str:
+        >>> text_indentation("is: this. a? sentence")
+        is:
+        <BLANKLINE>
+         this.
+        <BLANKLINE>
+         a?
+        <BLANKLINE>
+         sentence
+
+function is empty:
+        >>> text_indentation()
+        Traceback (most recent call last):
+        ...
+        TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+text is int:
+        >>> text_indentation(1)
+        Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
