@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def magic_string(char=[]):
-    char += ["Best School"]
+    char += ["BestSchool"]
     return ", ".join(char)
