@@ -5,25 +5,31 @@ The 1-my_list module
 Using MyList
 ===========================
 
-Importing the module:
+Importing the module
 	 >>> MyList = __import__("1-my_list").MyList
 
-Module docstring test:
+Function
+===========================
+Write a class MyList that inherits from list:
+
+     * All elements are type int
+
+Module docstring test
 	 >>> m = __import__("1-my_list").__doc__
 	 >>> len(m) > 1
 	 True
 
-Class docstring test:
+Class docstring test
 	 >>> c = __import__("1-my_list").MyList.__doc__
 	 >>> len(c) > 1
 	 True
 
-Function docstring test:
+Function docstring test
 	 >>> f = __import__("1-my_list").MyList.print_sorted.__doc__
 	 >>> len(f) > 1
 	 True
 
-A type test:
+A type test
 	 >>> issubclass(MyList, list)
 	 True
 
@@ -33,7 +39,7 @@ A type test:
 	 >>> isinstance(MyList, list)
 	 False
 
-Empty list test:
+Empty list test
 	 >>> l = MyList()
 	 >>> l.print_sorted()
 	 []
@@ -44,7 +50,7 @@ Too many args in func test:
 	 ...
 	 TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
 
-Sort one number:
+Sort one number
      >>> l.append(1)
      >>> print(l)
      [1]
@@ -52,7 +58,7 @@ Sort one number:
      >>> l.print_sorted()
      [1]
 
-Sort positive numbers test:
+Sort positive numbers test
 	 >>> l.extend([2, 3, 4, 5])
 	 >>> print(l)
 	 [1, 2, 3, 4, 5]
@@ -68,7 +74,7 @@ Sort positive numbers test:
 	 >>> l.print_sorted()
 	 [1, 2, 3, 4, 5]
 
-Sort positive and negative numbers test:
+Sort positive and negative numbers test
 	 >>> l.extend([-7, -5])
 	 >>> print(l)
 	 [5, 4, 3, 2, 1, -7, -5]
@@ -76,7 +82,7 @@ Sort positive and negative numbers test:
 	 >>> l.print_sorted()
 	 [-7, -5, 1, 2, 3, 4, 5]
 
-Sort negative numbers test:
+Sort negative numbers test
 	 >>> l = MyList()
 	 >>> l.extend([-1, -5, -4, -9, -7])
 	 >>> print(l)
