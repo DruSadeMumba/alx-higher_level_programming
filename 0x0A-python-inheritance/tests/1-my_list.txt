@@ -4,54 +4,54 @@ The ``1-my_list`` module
 Using ``MyList``
 ----------------------
 
-Checking Importing the module:
+Importing the module:
 	 >>> MyList = __import__("1-my_list").MyList
 
-Checking Module docstring test:
+Module docstring test:
 	 >>> m = __import__("1-my_list").__doc__
 	 >>> len(m) > 1
 	 True
 
-Checking Class docstring test:
+Class docstring test:
 	 >>> c = __import__("1-my_list").MyList.__doc__
 	 >>> len(c) > 1
 	 True
 
-Checking Function docstring test:
+Function docstring test:
 	 >>> f = __import__("1-my_list").MyList.print_sorted.__doc__
 	 >>> len(f) > 1
 	 True
 
-Checking Inheritance superclass test:
+Inheritance superclass test:
 	 >>> issubclass(MyList, list)
 	 True
 
-Checking Empty list test:
+Empty list test:
 	 >>> l = MyList()
 	 >>> l.print_sorted()
 	 []
 
-Checking Too many args in func test:
+Too many args in func test:
 	 >>> l.print_sorted(1)
 	 Traceback (most recent call last):
 	 ...
 	 TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
 
-Checking Sort positive numbers test:
+Sort positive numbers test:
 	 >>> l.append([1, 5, 4, 9, 7])
 	 >>> print(l)
 	 [1, 5, 4, 9, 7]
 	 >>> l.print_sorted()
 	 [1, 4, 5, 7, 9]
 
-Checking Sort positive and negative numbers test:
+Sort positive and negative numbers test:
 	 >>> l.extend([-7, -5])
 	 >>> print(l)
 	 [1, 5, 4, 9, 7, -7, -5]
 	 >>> l.print_sorted()
 	 [-7, -5, 1, 4, 5, 7, 9]
 
-Checking Sort negative numbers test:
+Sort negative numbers test:
 	 >>> l = MyList()
 	 >>> l.extend([-1, -5, -4, -9, -7])
 	 >>> print(l)
