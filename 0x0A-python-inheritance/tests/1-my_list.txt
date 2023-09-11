@@ -40,53 +40,53 @@ A type test
 	 False
 
 Empty list test
-	 >>> l = MyList()
-	 >>> l.print_sorted()
+	 >>> li = MyList()
+	 >>> li.print_sorted()
 	 []
 
 Too many args in func test:
-	 >>> l.print_sorted(1)
+	 >>> li.print_sorted(1)
 	 Traceback (most recent call last):
 	 ...
 	 TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
 
 Sort one number
-     >>> l.append(1)
-     >>> print(l)
+     >>> li.append(1)
+     >>> print(li)
      [1]
 
-     >>> l.print_sorted()
+     >>> li.print_sorted()
      [1]
 
 Sort positive numbers test
-	 >>> l.extend([2, 3, 4, 5])
-	 >>> print(l)
+	 >>> li.extend([2, 3, 4, 5])
+	 >>> print(li)
 	 [1, 2, 3, 4, 5]
 
-	 >>> l.print_sorted()
+	 >>> li.print_sorted()
 	 [1, 2, 3, 4, 5]
 
-     >>> l = MyList()
-     >>> l.extend([5, 4, 3, 2, 1])
-     >>> print(l)
+     >>> li = MyList()
+     >>> li.extend([5, 4, 3, 2, 1])
+     >>> print(li)
      [5, 4, 3, 2, 1]
 
-	 >>> l.print_sorted()
+	 >>> li.print_sorted()
 	 [1, 2, 3, 4, 5]
 
 Sort positive and negative numbers test
-	 >>> l.extend([-7, -5])
-	 >>> print(l)
+	 >>> li.extend([-7, -5])
+	 >>> print(li)
 	 [5, 4, 3, 2, 1, -7, -5]
 
-	 >>> l.print_sorted()
+	 >>> li.print_sorted()
 	 [-7, -5, 1, 2, 3, 4, 5]
 
 Sort negative numbers test
-	 >>> l = MyList()
-	 >>> l.extend([-1, -5, -4, -9, -7])
-	 >>> print(l)
+	 >>> li = MyList()
+	 >>> li.extend([-1, -5, -4, -9, -7])
+	 >>> print(li)
 	 [-1, -5, -4, -9, -7]
 
-	 >>> l.print_sorted()
+	 >>> li.print_sorted()
 	 [-9, -7, -5, -4, -1]
