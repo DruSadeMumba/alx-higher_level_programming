@@ -4,7 +4,7 @@ The ``1-my_list`` module
 Using ``MyList``
 ----------------------
 
-Importing func from module:
+Importing module:
 	 >>> MyList = __import__("1-my_list").MyList
 
 Module docstring test:
@@ -22,7 +22,7 @@ Function docstring test:
 	 >>> len(f) > 1
 	 True
 
-Inheritance from superclass test:
+Inheritance superclass test:
 	 >>> issubclass(MyList, list)
 	 True
 
