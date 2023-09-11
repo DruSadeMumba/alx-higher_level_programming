@@ -4,10 +4,10 @@
 
 class MyList(list):
     """inherit class list"""
-    def __int__(self):
+    def __init__(self):
         """initiate super class"""
         super().__init__()
 
     def print_sorted(self):
-        """print sorted list"""
+        """prints the sorted list"""
         print(sorted(self))
