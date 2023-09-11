@@ -22,9 +22,15 @@ Function docstring test:
 	 >>> len(f) > 1
 	 True
 
-Inheritance superclass test:
+A type test:
 	 >>> issubclass(MyList, list)
 	 True
+
+	 >>> isinstance(MyList, object)
+	 True
+
+	 >>> isinstance(MyList, list)
+	 False
 
 Empty list test:
 	 >>> l = MyList()
@@ -37,19 +43,33 @@ Too many args in func test:
 	 ...
 	 TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
 
+Sort one number:
+     >>> l.append(1)
+     >>> print(l)
+     [1]
+     >>> l.print_sorted()
+     [1]
+
 Sort positive numbers test:
-	 >>> l.append([1, 5, 4, 9, 7])
+	 >>> l.extend([2, 3, 4, 5])
 	 >>> print(l)
-	 [1, 5, 4, 9, 7]
+	 [1, 2, 3, 4, 5]
 	 >>> l.print_sorted()
-	 [1, 4, 5, 7, 9]
+	 [1, 2, 3, 4, 5]
+
+     >>> l = MyList()
+     >>> l.extend([5, 4, 3, 2, 1])
+     >>> print(l)
+     [5, 4, 3, 2, 1]
+	 >>> l.print_sorted()
+	 [1, 2, 3, 4, 5]
 
 Sort positive and negative numbers test:
 	 >>> l.extend([-7, -5])
 	 >>> print(l)
-	 [1, 5, 4, 9, 7, -7, -5]
+	 [5, 4, 3, 2, 1, -7, -5]
 	 >>> l.print_sorted()
-	 [-7, -5, 1, 4, 5, 7, 9]
+	 [-7, -5, 1, 2, 3, 4, 5]
 
 Sort negative numbers test:
 	 >>> l = MyList()
