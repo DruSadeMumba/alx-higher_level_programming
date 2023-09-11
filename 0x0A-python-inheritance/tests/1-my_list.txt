@@ -1,114 +1,86 @@
-===============================
-1. Print sorted module
-===============================
+===========================
+The 1-my_list module
+===========================
 
-Import module:
-==============
-    >>> MyList = __import__('1-my_list').MyList
+Using MyList
+===========================
 
+Importing the module:
+	 >>> MyList = __import__("1-my_list").MyList
 
-Function:
-=========
-Write a class MyList that inherits from list:
+Module docstring test:
+	 >>> m = __import__("1-my_list").__doc__
+	 >>> len(m) > 1
+	 True
 
-    * You can assume that all the elements of the list will be of type int
+Class docstring test:
+	 >>> c = __import__("1-my_list").MyList.__doc__
+	 >>> len(c) > 1
+	 True
 
-Section // No exceptions
-=========================
+Function docstring test:
+	 >>> f = __import__("1-my_list").MyList.print_sorted.__doc__
+	 >>> len(f) > 1
+	 True
 
-Test case #0: A test case to order a disordered list of positive integers
+A type test:
+	 >>> issubclass(MyList, list)
+	 True
 
-    >>> my_list = MyList()
-    >>> my_list.append(1)
-    >>> my_list.append(4)
-    >>> my_list.append(2)
-    >>> my_list.append(3)
-    >>> my_list.append(5)
-    >>> print(my_list)
-    [1, 4, 2, 3, 5]
+	 >>> isinstance(MyList, object)
+	 True
 
-    >>> my_list.print_sorted()
-    [1, 2, 3, 4, 5]
+	 >>> isinstance(MyList, list)
+	 False
 
-    >>> print(my_list)
-    [1, 4, 2, 3, 5]
+Empty list test:
+	 >>> l = MyList()
+	 >>> l.print_sorted()
+	 []
 
-Test case #1: A test case to order a disordered list of positive integers
+Too many args in func test:
+	 >>> l.print_sorted(1)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
 
-    >>> my_list = MyList()
-    >>> my_list.append(5)
-    >>> my_list.append(4)
-    >>> my_list.append(3)
-    >>> my_list.append(2)
-    >>> my_list.append(1)
-    >>> print(my_list)
-    [5, 4, 3, 2, 1]
+Sort one number:
+     >>> l.append(1)
+     >>> print(l)
+     [1]
 
-    >>> my_list.print_sorted()
-    [1, 2, 3, 4, 5]
+     >>> l.print_sorted()
+     [1]
 
-    >>> print(my_list)
-    [5, 4, 3, 2, 1]
+Sort positive numbers test:
+	 >>> l.extend([2, 3, 4, 5])
+	 >>> print(l)
+	 [1, 2, 3, 4, 5]
 
-Test case #2: A test case for a empty list
+	 >>> l.print_sorted()
+	 [1, 2, 3, 4, 5]
 
-    >>> my_list = MyList()
-    >>> print(my_list)
-    []
+     >>> l = MyList()
+     >>> l.extend([5, 4, 3, 2, 1])
+     >>> print(l)
+     [5, 4, 3, 2, 1]
 
-    >>> my_list.print_sorted()
-    []
+	 >>> l.print_sorted()
+	 [1, 2, 3, 4, 5]
 
-    >>> print(my_list)
-    []
+Sort positive and negative numbers test:
+	 >>> l.extend([-7, -5])
+	 >>> print(l)
+	 [5, 4, 3, 2, 1, -7, -5]
 
-Test case #3: A test case for do nothing
+	 >>> l.print_sorted()
+	 [-7, -5, 1, 2, 3, 4, 5]
 
-    >>> my_list = MyList()
-    >>> my_list.append(-5)
-    >>> my_list.append(-4)
-    >>> my_list.append(-3)
-    >>> my_list.append(-2)
-    >>> my_list.append(-1)
-    >>> print(my_list)
-    [-5, -4, -3, -2, -1]
+Sort negative numbers test:
+	 >>> l = MyList()
+	 >>> l.extend([-1, -5, -4, -9, -7])
+	 >>> print(l)
+	 [-1, -5, -4, -9, -7]
 
-    >>> my_list.print_sorted()
-    [-5, -4, -3, -2, -1]
-
-    >>> print(my_list)
-    [-5, -4, -3, -2, -1]
-
-Test case #4: A test case to order a disordered list of negative integers
-
-    >>> my_list = MyList()
-    >>> my_list.append(-1)
-    >>> my_list.append(-4)
-    >>> my_list.append(-2)
-    >>> my_list.append(-3)
-    >>> my_list.append(-5)
-    >>> print(my_list)
-    [-1, -4, -2, -3, -5]
-
-    >>> my_list.print_sorted()
-    [-5, -4, -3, -2, -1]
-
-    >>> print(my_list)
-    [-1, -4, -2, -3, -5]
-
-
-Section // Attribute Errors
-============================
-
-Test case #5: A invalid test case of tuples
-
-    >>> my_list = (1, 2)
-    >>> print(my_list)
-    (1, 2)
-    
-    >>> my_list.print_sorted()
-    Traceback (most recent call last):
-    AttributeError: 'tuple' object has no attribute 'print_sorted'
-
-    >>> print(my_list)
-    (1, 2)
+	 >>> l.print_sorted()
+	 [-9, -7, -5, -4, -1]
