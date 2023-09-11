@@ -38,19 +38,14 @@ Too many args in func test:
         TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
 
 Sort positive numbers test:
-        >>> l.append(1)
-        >>> l.append(5)
-        >>> l.append(4)
-        >>> l.append(9)
-        >>> l.append(7)
+        >>> l.append([1, 5, 4, 9, 7])
         >>> print(l)
         [1, 5, 4, 9, 7]
         >>> l.print_sorted()
         [1, 4, 5, 7, 9]
 
 Sort positive and negative numbers test:
-        >>> l.append(-7)
-        >>> l.append(-5)
+        >>> l.extend([-7, -5])
         >>> print(l)
         [1, 5, 4, 9, 7, -7, -5]
         >>> l.print_sorted()
@@ -58,11 +53,7 @@ Sort positive and negative numbers test:
 
 Sort negative numbers test:
         >>> l = MyList()
-        >>> l.append(-1)
-        >>> l.append(-5)
-        >>> l.append(-4)
-        >>> l.append(-9)
-        >>> l.append(-7)
+        >>> l.extend([-1, -5, -4, -9, -7])
         >>> print(l)
         [-1, -5, -4, -9, -7]
         >>> l.print_sorted()
