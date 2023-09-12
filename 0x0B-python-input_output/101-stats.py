@@ -7,7 +7,8 @@ def print_stats(size, codes):
     """print the stats"""
     print(f'File size: {size}')
     for key, val in sorted(codes.items()):
-        print(f'{key}: {val}')
+        if val:
+            print(f'{key}: {val}')
 
 
 if __name__ == "__main__":
