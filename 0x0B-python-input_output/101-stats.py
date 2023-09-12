@@ -23,12 +23,22 @@ if __name__ == "__main__":
     try:
         for line in stdin:
             modline = list(map(str, line.strip().split(" ")))
-            size += int(modline[-1])
-            if modline[-2] in codes:
-                codes[modline[-2]] += 1
-            count += 1
+
+            try:
+                size += int(modline[-1])
+            except (IndexError, ValueError):
+                pass
+
+            try:
+                if modline[-2] in codes:
+                    codes[modline[-2]] += 1
+                count += 1
+            except IndexError:
+                pass
+
             if count % 10 == 0:
                 print_stats(size, codes)
+
     except KeyboardInterrupt:
         print_stats(size, codes)
         raise
