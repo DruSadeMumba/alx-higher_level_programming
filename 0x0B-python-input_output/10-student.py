@@ -12,10 +12,6 @@ class Student:
 
     def to_json(self, attrs=None):
         """dict rep"""
-        if attrs:
-            d = {}
-            for attr in attrs:
-                if attr in self.__dict__.keys():
-                    d[attr] = self.__dict__[attr]
-            return d
+        if type(attrs) is list and all(type(var) is str for var in attrs):
+            return {i: getattr(self, i) for i in attrs if hasattr(self, i)}
         return self.__dict__
