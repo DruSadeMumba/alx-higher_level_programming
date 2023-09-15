@@ -35,7 +35,7 @@ Test two args integer_validator function:
      >>> try:
      ...    bg().integer_validator("age", [3])
      ... except Exception as e:
-     ...    print("[{}] {}".format(e.__class__.__name__, e))
+     ...    print(f"[{e.__class__.__name__}] {e}")
      [TypeError] age must be an integer
 
      >>> bg().integer_validator("age", True)
@@ -43,13 +43,13 @@ Test two args integer_validator function:
      >>> try:
      ...    bg().integer_validator("age", {3, 4})
      ... except Exception as e:
-     ...    print("[{}] {}".format(e.__class__.__name__, e))
+     ...    print(f"[{e.__class__.__name__}] {e}")
      [TypeError] age must be an integer
 
      >>> try:
      ...    bg().integer_validator("age", None)
      ... except Exception as e:
-     ...    print("[{}] {}".format(e.__class__.__name__, e))
+     ...    print(f"[{e.__class__.__name__}] {e}")
      [TypeError] age must be an integer
 
      >>> bg().integer_validator("age", 12)
@@ -57,17 +57,17 @@ Test two args integer_validator function:
      >>> try:
      ...    bg().integer_validator("age", 12.5)
      ... except Exception as e:
-     ...    print("[{}] {}".format(e.__class__.__name__, e))
+     ...    print(f"[{e.__class__.__name__}] {e}")
      [TypeError] age must be an integer
 
      >>> try:
      ...    bg().integer_validator("age", 0)
      ... except Exception as e:
-     ...    print("[{}] {}".format(e.__class__.__name__, e))
+     ...    print(f"[{e.__class__.__name__}] {e}")
      [ValueError] age must be greater than 0
 
      >>> try:
      ...    bg().integer_validator("age", -4)
      ... except Exception as e:
-     ...    print("[{}] {}".format(e.__class__.__name__, e))
+     ...    print(f"[{e.__class__.__name__}] {e}")
      [ValueError] age must be greater than 0
