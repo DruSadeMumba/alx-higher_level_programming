@@ -4,6 +4,7 @@ from models.base import Base
 
 
 def validate(val, name, min=None):
+    """func to validate values"""
     if type(val) is not int:
         raise TypeError(f"{name} must be an integer")
     if min == 0 and val < min:
@@ -58,3 +59,7 @@ class Rectangle(Base):
     def y(self, val):
         validate(val, "y", 0)
         self.__y = val
+
+    def area(self):
+        """area of rect"""
+        return self.__width * self.__height
