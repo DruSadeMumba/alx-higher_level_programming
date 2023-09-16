@@ -79,6 +79,7 @@ class Rectangle(Base):
                f"- {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
+        """update vals of rect"""
         if args:
             for attr, val in zip(self.order, args):
                 setattr(self, attr, val)
@@ -86,3 +87,7 @@ class Rectangle(Base):
         if kwargs:
             for attr, val in kwargs.items():
                 setattr(self, attr, val)
+
+    def to_dictionary(self):
+        """dict rep of rect"""
+        return {attr: getattr(self, attr) for attr in self.order}
