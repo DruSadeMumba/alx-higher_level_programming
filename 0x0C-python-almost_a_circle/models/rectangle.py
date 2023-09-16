@@ -68,4 +68,11 @@ class Rectangle(Base):
         """print rect inst with #"""
         if self.__width == 0 or self.__height == 0:
             print("")
-        print("\n".join(["#" * self.__width for _ in range(self.__height)]))
+        print("\n" * self.y +
+              "\n".join(" " * self.__x +
+                        "#" * self.__width for _ in range(self.__height)))
+
+    def __str__(self):
+        """str rep of rect"""
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} " \
+               f"- {self.__width}/{self.__height} "
