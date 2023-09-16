@@ -16,6 +16,7 @@ def validate(val, name, min=None):
 class Rectangle(Base):
     """Rectangle class"""
     order = ['id', 'width', 'height', 'x', 'y']
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """class constructor"""
         self.width = width
@@ -77,7 +78,11 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} " \
                f"- {self.__width}/{self.__height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         if args:
             for attr, val in zip(self.order, args):
+                setattr(self, attr, val)
+
+        if kwargs:
+            for attr, val in kwargs.items():
                 setattr(self, attr, val)
