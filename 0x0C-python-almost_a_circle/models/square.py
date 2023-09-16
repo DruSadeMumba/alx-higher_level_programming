@@ -5,7 +5,7 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """Square class"""
-    sqorder = ['id', 'size', 'x', 'y']
+    sqOrder = ['id', 'size', 'x', 'y']
 
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
@@ -27,7 +27,7 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """update vals of square"""
         if args:
-            for attr, val in zip(self.sqorder, args):
+            for attr, val in zip(self.sqOrder, args):
                 setattr(self, attr, val)
 
         if kwargs:
@@ -36,4 +36,4 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """dict rep of square"""
-        return {attr: getattr(self, attr) for attr in self.sqorder}
+        return {attr: getattr(self, attr) for attr in self.sqOrder}
