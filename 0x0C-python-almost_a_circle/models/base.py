@@ -39,7 +39,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """"""
+        """returns an instance"""
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         else:
@@ -49,6 +49,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """load from json"""
         fileJson = f"{cls.__name__}.json"
         try:
             with open(fileJson, "r") as f:
@@ -58,6 +59,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """save to csv"""
         fileCsv = f"{cls.__name__}.csv"
         attributes = cls.sqOrder if cls.__name__ == "Square" else cls.recOrder
         with open(fileCsv, 'w', newline='') as f:
@@ -67,6 +69,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """load from csv"""
         fileCsv = f"{cls.__name__}.csv"
         attributes = cls.sqOrder if cls.__name__ == "Square" else cls.recOrder
         objects = []
