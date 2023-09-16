@@ -15,7 +15,7 @@ def validate(val, name, min=None):
 
 class Rectangle(Base):
     """Rectangle class"""
-    order = ['id', 'width', 'height', 'x', 'y']
+    recorder = ['id', 'width', 'height', 'x', 'y']
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """rect class constructor"""
@@ -81,7 +81,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """update vals of rect"""
         if args:
-            for attr, val in zip(self.order, args):
+            for attr, val in zip(self.recorder, args):
                 setattr(self, attr, val)
 
         if kwargs:
@@ -90,4 +90,4 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """dict rep of rect"""
-        return {attr: getattr(self, attr) for attr in self.order}
+        return {attr: getattr(self, attr) for attr in self.recorder}
