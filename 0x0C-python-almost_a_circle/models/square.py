@@ -20,7 +20,7 @@ class Square(Rectangle):
         self.height = val
 
     def __str__(self):
-        """str rep of rect"""
+        """str rep of square"""
         return f"[Square] ({self.id}) {self.x}/{self.y} " \
             f"- {self.width}"
 
