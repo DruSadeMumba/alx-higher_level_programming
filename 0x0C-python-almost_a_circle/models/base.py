@@ -54,7 +54,8 @@ class Base:
         file_json = f"{cls.__name__}.json"
         try:
             with open(file_json, "r") as f:
-                return [cls.create(**dic) for dic in json.load(f)]
+                dic = cls.from_json_string(f.read())
+                return [cls.create(**dic) for i, dic in enumerate(dic)]
         except IOError:
             return []
 
