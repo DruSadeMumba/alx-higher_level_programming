@@ -3,13 +3,13 @@
 from models.base import Base
 
 
-def validate(val, name, min=None):
+def validate(val, name, mini=None):
     """func to validate values"""
     if type(val) is not int:
         raise TypeError(f"{name} must be an integer")
-    if min == 0 and val < min:
-        raise ValueError(f"{name} must be >= {min}")
-    if min == 1 and val < min:
+    if mini == 0 and val < mini:
+        raise ValueError(f"{name} must be >= {mini}")
+    if mini == 1 and val < mini:
         raise ValueError(f"{name} must be > 0")
 
 

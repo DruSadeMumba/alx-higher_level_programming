@@ -3,10 +3,12 @@
 from unittest import TestCase
 
 import pep8
+from models.rectangle import Rectangle
 
 
 class TestRectangle(TestCase):
     """Rectangle class tests"""
+    rect = Rectangle(10, 8, 6, 4, 2)
     def test_pep8(self):
         """pep8 test"""
         style = pep8.StyleGuide(quiet=True)
@@ -15,7 +17,7 @@ class TestRectangle(TestCase):
 
     def test_width(self):
         """width test"""
-        self.fail()
+        self.assertTrue(self.rect.width == 10)
 
     def test_height(self):
         """height test"""

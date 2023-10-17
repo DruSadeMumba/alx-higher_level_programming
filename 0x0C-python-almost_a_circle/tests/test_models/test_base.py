@@ -25,22 +25,29 @@ class TestBase(TestCase):
         self.assertTrue(Base(), self.id == 2)
 
     def test_to_json_string(self):
+        """to json str test"""
         self.fail()
 
     def test_save_to_file(self):
+        """save to json file test"""
         self.fail()
 
     def test_from_json_string(self):
+        """from json str test"""
         self.fail()
 
     def test_create(self):
+        """create test"""
         self.fail()
 
     def test_load_from_file(self):
+        """load from json file test"""
         self.fail()
 
     def test_save_to_file_csv(self):
+        """save to csv file test"""
         self.fail()
 
     def test_load_from_file_csv(self):
+        """load from csv file test"""
         self.fail()
