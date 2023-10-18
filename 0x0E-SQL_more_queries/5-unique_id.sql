@@ -1,0 +1,1 @@
+-- A script that creates the table unique_id
