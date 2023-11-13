@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 let count = process.argv.slice(2)[0];
 if (isNaN(count) || typeof count === 'undefined') {
