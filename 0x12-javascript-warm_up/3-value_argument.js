@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
-const count = process.argv.slice(2);
-if (!count[0]) {
+const count = process.argv.slice(2)[0];
+if (!count) {
   console.log('No argument');
-} else if (count[0]) {
-  console.log(count[0]);
+} else if (count) {
+  console.log(count);
 }
