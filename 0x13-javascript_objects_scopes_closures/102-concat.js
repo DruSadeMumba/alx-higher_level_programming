@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 const fileSync = require('fs');
 const args = process.argv.slice(2);
