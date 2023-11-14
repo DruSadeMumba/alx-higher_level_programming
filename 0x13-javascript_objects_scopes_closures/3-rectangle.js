@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-class Rectangle {
+module.exports = class Rectangle {
   constructor (w, h) {
     if (w > 0 && h > 0) {
       this.width = w;
@@ -11,6 +11,4 @@ class Rectangle {
   print () {
     console.log(Array(this.height).fill('X'.repeat(this.width)).join('\n'));
   }
-}
-
-module.exports = Rectangle;
+};
