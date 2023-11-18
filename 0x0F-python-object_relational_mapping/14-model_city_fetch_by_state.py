@@ -15,4 +15,4 @@ if __name__ == "__main__":
 
     with Session(engine) as session:
         for state, city in session.query(State, City).join(City).all():
-            print(f"{state.name}: {city.id} {city.name}")
+            print(f"{state.name}: ({city.id}) {city.name}")
