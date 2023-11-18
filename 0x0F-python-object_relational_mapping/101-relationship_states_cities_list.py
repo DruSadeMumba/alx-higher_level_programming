@@ -16,7 +16,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     with Session(engine) as session:
-        for state in session.query(State).options(joinedload(State.cities)).all():
+        states = session.query(State).options(joinedload(State.cities)).all()
+        for state in states:
             print(f"{state.id}: {state.name}")
             for city in state.cities:
                 print(f"\t{city.id}: {city.name}")
