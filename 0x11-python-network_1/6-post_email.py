@@ -12,6 +12,6 @@ if __name__ == "__main__":
     email_data = {"email": sys.argv[2]}
     try:
         res = requests.post(url, data=email_data).text
-        print(f"Your email is: {res}")
+        print(res)
     except requests.exceptions.RequestException as e:
         print("Error:", e)
