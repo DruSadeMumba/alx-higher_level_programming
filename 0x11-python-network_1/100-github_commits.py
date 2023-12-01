@@ -8,12 +8,9 @@ if __name__ == "__main__":
     try:
         res = requests.get(url)
         commits = res.json()[:10]
-        try:
-            for commit in commits:
-                sha = commit.get("sha")
-                name = commit.get("commit").get("author").get("name")
-                print(f"{sha}: {name}")
-        except IndexError:
-            pass
+        for commit in commits:
+            sha = commit.get("sha")
+            name = commit.get("commit").get("author").get("name")
+            print(f"{sha}: {name}")
     except requests.exceptions.RequestException as e:
         print("Error:", e)
