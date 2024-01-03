@@ -12,5 +12,6 @@ req(url, (err, res, body) => {
     console.log(movies.length);
   } else {
     console.error(err || res.statusCode);
+    process.exit(1);
   }
 });
