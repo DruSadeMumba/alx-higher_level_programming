@@ -11,7 +11,7 @@ req(url, (err, res, body) => {
   try {
     const data = JSON.parse(body);
     console.log(data.title);
-  } catch (err){
+  } catch (err) {
     console.error(err.message);
     process.exit(1);
   }
