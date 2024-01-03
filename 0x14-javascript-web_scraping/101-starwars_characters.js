@@ -4,11 +4,11 @@ const id = process.argv[2];
 const apiUrl = `https://swapi-api.alx-tools.com/api/films/${id}`;
 
 const getChar = (url) => new Promise((resolve, reject) =>
-    req(url, (error, response, charBody) =>
-      error || response.statusCode !== 200
-        ? reject(error || response.statusCode)
-        : resolve(JSON.parse(charBody).name)
-    )
+  req(url, (error, response, charBody) =>
+    error || response.statusCode !== 200
+      ? reject(error || response.statusCode)
+      : resolve(JSON.parse(charBody).name)
+  )
 );
 
 req(apiUrl, async (err, res, body) => {
