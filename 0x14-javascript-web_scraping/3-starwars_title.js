@@ -13,5 +13,6 @@ req(url, (err, res, body) => {
     console.log(data.title);
   } catch (err){
     console.error(err.message);
+    process.exit(1);
   }
 });
