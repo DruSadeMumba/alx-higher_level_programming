@@ -1,1 +1,3 @@
-#!/usr/bin/env node
+$('#red_header').click(() => {
+  $('header').addClass('red')
+});
