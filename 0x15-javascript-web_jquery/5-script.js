@@ -1,4 +1,4 @@
 $('#add_item').click(() => {
   const newItem = $('<li>').text('Item')
-  $('ul.my_list').append(newItem)
+  $('ul.my_list').append(newItem);
 });
