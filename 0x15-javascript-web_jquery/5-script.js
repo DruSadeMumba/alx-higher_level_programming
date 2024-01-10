@@ -1,1 +1,4 @@
-#!/usr/bin/env node
+$('#add_item').click(() => {
+  const newItem = $('<li>').text('Item')
+  $('ul.my_list').append(newItem)
+});
