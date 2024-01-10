@@ -1,1 +1,3 @@
-#!/usr/bin/env node
+$('#toggle_header').click(() => {
+  $('header').toggleClass('red green')
+});
